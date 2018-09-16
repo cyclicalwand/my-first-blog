@@ -8,15 +8,13 @@
     <div>
       <h1>Michael's blog</h1>
     </div>
-    <div>
-      <p>Published 16/09/18 18:01</p>
-      <h2><a href="#">My first post</a></h2>
-      <p>I already know HTML so this is pointless!</P>
-    </div>
-    <div>
-      <p>Published 16/09/18 18:04</p>
-      <h2><a href="#">My second post</a></h2>
-      <p>I'm not so good on CSS though!</p>
+      {% for post in posts %}
+      <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="#">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+      {% endfor %}
     </div>
   </body>
 </html>
